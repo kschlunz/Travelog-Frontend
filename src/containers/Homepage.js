@@ -8,13 +8,24 @@ class Homepage extends React.Component {
 
 componentDidMount(){
   this.props.fetchTrips()
+  console.log(this.props, "are the props at time of mount");
+}
+
+callTripContainer = () => {
+  if (this.props.trips){
+    return (<TripContainer trip = {this.props} />)
+  }else {
+    return (<h1>No Trips Yet Fam</h1>)
+  }
 }
 
   render () {
+    
 
     return(
       <div>
-        <TripContainer trip = {this.props.trips} />
+        {this.props.loggedIn ? <h1>Logged In</h1> : <h1>You ain't logged in</h1>}
+        {this.callTripContainer()}
       </div>
     )
 
@@ -22,7 +33,8 @@ componentDidMount(){
 }
 
 const mapStateToProps = state => ({
-  trips: state.trips.trips
+  trips: state.trips.trips,
+  loggedIn: state.session.loggedIn,
 })
 
 export default connect(mapStateToProps, { fetchTrips })(Homepage)
