@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import {fetchTrips } from '../actions/tripAction';
 import TripContainer from './TripContainer'
+import TripForm from './TripForm'
 
 
 class Homepage extends React.Component {
@@ -20,12 +21,13 @@ callTripContainer = () => {
 }
 
   render () {
-    
+
 
     return(
       <div>
         {this.props.loggedIn ? <h1>Logged In</h1> : <h1>You ain't logged in</h1>}
         {this.callTripContainer()}
+        <TripForm />
       </div>
     )
 
