@@ -13,3 +13,19 @@ export const fetchTrips = (dispatch) =>{
     })})
   }
 }
+
+export const createTrip = (tripData) => (dispatch) => {
+  console.log('post action')
+  fetch('http://localhost:3000/api/v1/trips',{
+    method:'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(tripData)
+  })
+  .then(res => res.json())
+  .then(tripData => dispatch({
+    type: NEW_TRIP,
+    payload: tripData
+  }))
+}

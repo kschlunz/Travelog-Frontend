@@ -1,5 +1,7 @@
 import React from 'react'
-
+import { connect } from 'react-redux';
+import { createTrip } from '../actions/tripAction'
+import PropTypes from 'prop-types';
 
 class TripForm extends React.Component {
   state={
@@ -24,16 +26,11 @@ class TripForm extends React.Component {
       flights: this.state.flights,
       user_id: this.state.user_id
     }
-    fetch('http://localhost:3000/api/v1/trips',{
-      method: "POST",
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newTrip)
-    })
-      .then(res=> res.json())
-      .then(data => console.log(data))
 
+    this.setState({
+          email: '', password: '', name: '', location: '', genre: '', bio: '', profile_img: ''
+        })
+        this.props.createTrip(newTrip);
 
   }
 
@@ -83,4 +80,9 @@ class TripForm extends React.Component {
   }
 }
 
-export default TripForm ;
+TripForm.propTypes = {
+  createTrip: PropTypes.func.isRequired
+
+}
+
+export default connect(null, { createTrip })(TripForm);

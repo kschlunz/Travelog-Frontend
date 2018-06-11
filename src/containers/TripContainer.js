@@ -3,15 +3,16 @@ import TripList from '../components/TripList'
 
 
 const TripContainer = (props) => {
-  console.log(props.trip.trips.places)
-  const places = props.trip.trips.places.map((place) => console.log(place.location) )
+
+   const places = props.trip.trips.places.map((place) => place )
 
 
   return (
     <div>
       <ul>
        {props.trip.trips.trips.map((tripItem) =>{
-         return <TripList tripData={tripItem}/>
+
+         return <TripList tripData={tripItem} places={places}/>
        })}
      </ul>
 

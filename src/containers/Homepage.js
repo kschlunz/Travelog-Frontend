@@ -3,14 +3,23 @@ import { connect } from 'react-redux';
 import {fetchTrips } from '../actions/tripAction';
 import TripContainer from './TripContainer'
 import TripForm from './TripForm'
+import PropTypes from 'prop-types';
+
 
 
 class Homepage extends React.Component {
 
 componentDidMount(){
+  console.log(this.props.fetchTrips);
   this.props.fetchTrips()
-  console.log(this.props, "are the props at time of mount");
+
 }
+
+componentWillReceiveProps(nextProps) {
+    if(nextProps.newTrip) {
+      this.props.trips.trips.push(nextProps.newTrip)
+    }
+  }
 
 callTripContainer = () => {
   if (this.props.trips){
@@ -21,7 +30,6 @@ callTripContainer = () => {
 }
 
   render () {
-
 
     return(
       <div>
@@ -34,8 +42,16 @@ callTripContainer = () => {
   }
 }
 
+Homepage.propTypes = {
+  fetchTrips: PropTypes.func.isRequired,
+  trips: PropTypes.array.isRequired,
+  newTrip: PropTypes.object
+}
+
 const mapStateToProps = state => ({
+  state: state,
   trips: state.trips.trips,
+  newTrip: state.trips.trip,
   loggedIn: state.session.loggedIn,
 })
 

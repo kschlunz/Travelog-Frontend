@@ -13,7 +13,13 @@ export default function(state = initialState, action){
         ...state,
         trips: action.payload
       }
-      default:
-        return state;
+      case NEW_TRIP:
+      return {
+        ...state,
+        trip: action.payload
+      }
+    default:
+      return state;
+
   }
 }
