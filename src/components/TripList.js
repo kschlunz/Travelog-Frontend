@@ -3,13 +3,10 @@ import PropTypes from 'prop-types'
 
 const TripList = (props) => {
 
-
-
-
-
+console.log(props.tripData.places)
 
     return (
-    <li><h1>Trip: {props.tripData.name}</h1> <p>Dates: {props.tripData.dates}</p><p>Description:{props.tripData.description}</p></li>
+    <li ><h1>Trip: {props.tripData.name}</h1> <p>Dates: {props.tripData.dates}</p><p>Description:{props.tripData.description}</p></li>
 
   )
 }

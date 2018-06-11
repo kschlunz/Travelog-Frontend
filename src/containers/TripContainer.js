@@ -4,7 +4,6 @@ import TripList from '../components/TripList'
 
 const TripContainer = (props) => {
 
-   const places = props.trip.trips.places.map((place) => place )
 
 
   return (
@@ -12,7 +11,7 @@ const TripContainer = (props) => {
       <ul>
        {props.trip.trips.trips.map((tripItem) =>{
 
-         return <TripList tripData={tripItem} places={places}/>
+         return <TripList tripData={tripItem} />
        })}
      </ul>
 
