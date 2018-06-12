@@ -19,8 +19,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
           <Route path="/Login" component={Login}/>
-          <Route path="/homepage" component={Homepage}/>
           <Route path="/trips/:id" component={LocationShow}/>
+          <Route path="/homepage" component={Homepage}/>
+
           <Route path="/places/:id" component={PlacesPage}/>
 
 

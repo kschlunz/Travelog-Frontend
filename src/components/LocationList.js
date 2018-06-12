@@ -1,5 +1,6 @@
 import React from 'react'
 import AllLocations from './AllLocations'
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,6 +10,7 @@ const LocationList = (props) => {
 
   return (
     <div>
+      
         <h1>{props.trip.trip.name}</h1>
         <p>Trip Description: {props.trip.trip.description}</p>
         <p>Trip Dates: {props.trip.trip.dates}</p>
