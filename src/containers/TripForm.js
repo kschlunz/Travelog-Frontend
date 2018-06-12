@@ -28,7 +28,7 @@ class TripForm extends React.Component {
     }
 
     this.setState({
-          email: '', password: '', name: '', location: '', genre: '', bio: '', profile_img: ''
+          name: '', description: '', date: '', flights: ''
         })
         this.props.createTrip(newTrip);
 

@@ -1,8 +1,9 @@
-import { FETCH_TRIPS, NEW_TRIP, GET_TRIP} from '../actions/types'
+import { FETCH_TRIPS, NEW_TRIP, GET_TRIP, NEW_PLACE} from '../actions/types'
 
 const initialState = {
   trips: [],
-  trip: {}
+  trip: {},
+  place:{}
 }
 
 export default function(state = initialState, action){
@@ -24,8 +25,13 @@ export default function(state = initialState, action){
       return{
         ...state,
         [action.payload.id]: action.payload
-
       }
+
+      case NEW_PLACE:
+        return{
+          ...state,
+          place: action.payload
+        }
     default:
       return state;
 
