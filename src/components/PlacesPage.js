@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 class PlacesPage extends React.Component{
 
-
+//we will do a fetch to places to render each pages place
 
 
   render(){
