@@ -1,4 +1,4 @@
-import { FETCH_TRIPS, NEW_TRIP} from '../actions/types'
+import { FETCH_TRIPS, NEW_TRIP, GET_TRIP} from '../actions/types'
 
 const initialState = {
   trips: [],
@@ -17,6 +17,14 @@ export default function(state = initialState, action){
       return {
         ...state,
         trip: action.payload
+      }
+
+      case GET_TRIP:
+      console.log(action.payload.id)
+      return{
+        ...state,
+        [action.payload.id]: action.payload
+
       }
     default:
       return state;

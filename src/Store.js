@@ -5,6 +5,7 @@ import rootReducer from './reducers';
 const initialState = {
   trips: [],
   loggedIn: false,
+  
 }
 
 

@@ -6,9 +6,22 @@ import { Provider } from 'react-redux';
 import Store from './Store';
 import routes from './routes'
 import {Router, browserHistory} from 'react-router'
+import { BrowserRouter, Route} from 'react-router-dom'
+import Homepage from './containers/Homepage'
+import LocationShow from './components/location_show'
 
 ReactDOM.render(
-  
+
   <Provider store={Store}>
-    <Router history={browserHistory} routes={routes} />
+
+    <BrowserRouter>
+      <div>
+        
+          <Route path="/homepage" component={Homepage}/>
+          <Route path="/trips/:id" component={LocationShow}/>
+
+
+      </div>
+
+    </BrowserRouter>
   </Provider>, document.getElementById('root'));
