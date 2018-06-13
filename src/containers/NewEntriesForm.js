@@ -10,6 +10,7 @@ class NewEntriesForm extends React.Component {
     restaurants: '',
     hotels: '',
     tours: '',
+    user_id: 1
 
   }
 
@@ -22,10 +23,11 @@ class NewEntriesForm extends React.Component {
 
     const newEntry = {
       description: this.state.description,
-      place_id: this.props.id,
+      place_id: this.props.locationID,
       restaurants: this.state.restaurants,
       hotels: this.state.hotels,
-      tours: this.state.hotels
+      tours: this.state.tours,
+      user_id: this.state.user_id
     }
 
     this.setState({
@@ -36,7 +38,7 @@ class NewEntriesForm extends React.Component {
       tours: '',
 
         })
-        console.log(this.props.id);
+        console.log(this.props.locationID);
         this.props.createEntry(newEntry);
 
   }
@@ -88,8 +90,8 @@ class NewEntriesForm extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    createPlace: (newEntry) => {
-      dispatch(createPlace(newEntry))
+    createEntry: (newEntry) => {
+      dispatch(createEntry(newEntry))
     }
   }
 

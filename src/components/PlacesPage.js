@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getPlace } from '../actions/tripAction';
 import PlacesList from './PlacesList';
 import { Link } from 'react-router-dom';
+import NewEntriesForm from '../containers/NewEntriesForm'
 
 
 class PlacesPage extends React.Component{
@@ -34,6 +35,7 @@ class PlacesPage extends React.Component{
     return(
       <div>
         {this.callPlace()}
+        <NewEntriesForm locationID = {this.state.locationID}/>
       </div>
     )
   }

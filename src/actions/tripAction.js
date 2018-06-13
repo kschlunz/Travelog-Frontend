@@ -1,4 +1,4 @@
-import { FETCH_TRIPS, NEW_TRIP, GET_TRIP, NEW_PLACE, GET_PLACE} from './types'
+import { FETCH_TRIPS, NEW_TRIP, GET_TRIP, NEW_PLACE, GET_PLACE, NEW_ENTRY} from './types'
 
 export const fetchTrips = (dispatch) =>{
   return function(dispatch) {
@@ -69,4 +69,21 @@ export const getPlace = (id) => (dispatch) =>{
       type: GET_PLACE,
       payload: place
   })})
+}
+
+export const createEntry = (tripData) => (dispatch) => {
+
+  console.log(tripData)
+  fetch(`http://localhost:3000/api/v1/entries`,{
+    method:'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(tripData)
+  })
+  .then(res => res.json())
+  .then(tripData => dispatch({
+    type: NEW_ENTRY,
+    payload: tripData
+  }))
 }
