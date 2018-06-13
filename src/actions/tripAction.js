@@ -1,4 +1,4 @@
-import { FETCH_TRIPS, NEW_TRIP, GET_TRIP, NEW_PLACE, GET_PLACE, NEW_ENTRY, DELETE_TRIP} from './types'
+import { FETCH_TRIPS, NEW_TRIP, GET_TRIP, NEW_PLACE, GET_PLACE, NEW_ENTRY, DELETE_TRIP, DELETE_PLACE} from './types'
 
 export const fetchTrips = (dispatch) =>{
   return function(dispatch) {
@@ -99,6 +99,21 @@ export const deleteTrip = (id, callback) => (dispatch) =>{
 
     return dispatch({
       type: DELETE_TRIP,
+      payload: id
+  })})
+  .then(()=>callback())
+}
+
+export const deletePlace = (id, callback) => (dispatch) =>{
+
+  fetch( `http://localhost:3000/api/v1/places/${id}`,{
+    method: 'DELETE',
+  })
+  .then(res => res.json())
+  .then(trip => {
+
+    return dispatch({
+      type: DELETE_PLACE,
       payload: id
   })})
   .then(()=>callback())

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { getPlace } from '../actions/tripAction';
+import { getPlace, deletePlace } from '../actions/tripAction';
 import PlacesList from './PlacesList';
 import { Link } from 'react-router-dom';
 import NewEntriesForm from '../containers/NewEntriesForm'
@@ -13,12 +13,19 @@ class PlacesPage extends React.Component{
   componentDidMount(){
   const {id} =  this.props.match.params;
     this.props.getPlace(id);
-    console.log({id})
+
     this.setState({
       locationID: id
     })
   }
 
+  onDeleteClick = () => {
+    console.log(this.props.trip.trip_id)
+    const {id} =  this.props.match.params;
+    this.props.deletePlace(id, () =>{
+      this.props.history.push(`/trips/${this.props.trip.trip_id}`)
+    })
+  }
 
 
 
@@ -34,10 +41,11 @@ class PlacesPage extends React.Component{
   render(){
 
 
+
     return(
       <div>
         {this.callPlace()}
-        
+        <button onClick={this.onDeleteClick}>Delete Place</button>
         <NewEntriesForm locationID = {this.state.locationID}/>
       </div>
     )
@@ -53,4 +61,4 @@ function mapStateToProps({trips}, ownProps){
   }
 }
 
-export default connect(mapStateToProps,{getPlace})(PlacesPage)
+export default connect(mapStateToProps,{getPlace, deletePlace})(PlacesPage)
