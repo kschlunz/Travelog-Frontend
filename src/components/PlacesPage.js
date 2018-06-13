@@ -18,6 +18,7 @@ class PlacesPage extends React.Component{
     })
   }
 
+
   callPlace = () => {
 
     if (this.props.trip){
