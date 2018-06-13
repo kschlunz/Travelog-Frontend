@@ -8,7 +8,7 @@ const AllLocations = (props) => {
 
     return (
     <li ><Link to={`/places/${props.tripData.locationID}`}><h2>Place: {props.tripData.location}</h2> </Link></li>
-
+    
   )
 }
 

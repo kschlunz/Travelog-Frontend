@@ -1,5 +1,6 @@
 import React from 'react'
 import AllEntries from './AllEntries'
+import { Link } from 'react-router-dom'
 
 
 
@@ -20,6 +21,7 @@ render(){
   return (
     <div>
       <h1>{this.props.place.trip.location}</h1>
+    
       <ul>
        {this.call()}
       </ul>
