@@ -6,7 +6,7 @@ const AllEntries = (props) => {
   console.log(props.tripData)
 
     return (
-    <li ><h2>Entry: Description: {props.tripData.description} hotels: {props.tripData.hotels} restaurants: {props.tripData.restaurants} tours: {props.tripData.tours}</h2> </li>
+    <h3>Description: {props.tripData.description} <br/> hotels: {props.tripData.hotels} <br/> restaurants: {props.tripData.restaurants} <br/> tours: {props.tripData.tours}<br/><br/> <button>Delete this entry</button></h3> 
 
   )
 }

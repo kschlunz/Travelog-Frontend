@@ -44,8 +44,12 @@ class PlacesPage extends React.Component{
 
     return(
       <div>
+
+
         {this.callPlace()}
+
         <button onClick={this.onDeleteClick}>Delete Place</button>
+
         <NewEntriesForm locationID = {this.state.locationID}/>
       </div>
     )
