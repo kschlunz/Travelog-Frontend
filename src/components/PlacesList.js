@@ -3,21 +3,30 @@ import AllEntries from './AllEntries'
 
 
 
-const PlacesList = (props) => {
+class PlacesList extends React.Component  {
 
-console.log(props.place.trip)
+  call = () => {
+    if (this.props.place.trip.entries){
+      return this.props.place.trip.entries.map((tripItem) =>{
 
+        return <AllEntries tripData={tripItem} />
+      })
+    }else {
+      return (<h1>No Entries yet fam</h1>)
+    }
+  }
+
+render(){
   return (
     <div>
-      <h1>{props.place.trip.location}</h1>
+      <h1>{this.props.place.trip.location}</h1>
       <ul>
-       {props.place.trip.entries.map((tripItem) =>{
-
-         return <AllEntries tripData={tripItem} />
-       })}
+       {this.call()}
       </ul>
     </div>
   )
+}
+
 }
 
 export default PlacesList
