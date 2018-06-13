@@ -4,8 +4,7 @@ import TripList from '../components/TripList'
 
 const TripContainer = (props) => {
 
-  console.log(props.trip.trips.trips.map((t) =>{ return t}));
-
+  
 
   return (
     <div>

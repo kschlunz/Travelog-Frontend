@@ -20,6 +20,8 @@ class PlacesPage extends React.Component{
   }
 
 
+
+
   callPlace = () => {
 
     if (this.props.trip){
@@ -35,6 +37,7 @@ class PlacesPage extends React.Component{
     return(
       <div>
         {this.callPlace()}
+        
         <NewEntriesForm locationID = {this.state.locationID}/>
       </div>
     )
@@ -44,6 +47,7 @@ class PlacesPage extends React.Component{
 function mapStateToProps({trips}, ownProps){
   return {
     trip: trips[ownProps.match.params.id],
+    entry: trips.entry
 
 
   }

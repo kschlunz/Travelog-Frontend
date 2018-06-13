@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { getTrip } from '../actions/tripAction';
+import { getTrip, deleteTrip } from '../actions/tripAction';
 import LocationList from './LocationList';
 import { Link } from 'react-router-dom';
 import NewPlacesForm from '../containers/NewPlacesForm'
@@ -35,6 +35,12 @@ class LocationShow extends React.Component{
     }
   }
 
+  onDeleteClick = () => {
+    const {id} =  this.props.match.params;
+    this.props.deleteTrip(id, () =>{
+      this.props.history.push('/homepage')
+    })
+  }
 
   render(){
 
@@ -42,6 +48,7 @@ class LocationShow extends React.Component{
 
     return(
       <div>
+        <button onClick={this.onDeleteClick}>Delete Trip</button>
         <Link to='/homepage' class="btn-primary">Back To All Trips</Link>
         {this.callTrip()}
         <NewPlacesForm id={this.state.id}/>
@@ -58,4 +65,4 @@ function mapStateToProps({trips}, ownProps){
   }
 }
 
-export default connect(mapStateToProps, {getTrip})(LocationShow)
+export default connect(mapStateToProps, {getTrip, deleteTrip})(LocationShow)

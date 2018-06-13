@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 class Homepage extends React.Component {
 
 componentDidMount(){
-  console.log(this.props.fetchTrips);
+
   this.props.fetchTrips()
 }
 

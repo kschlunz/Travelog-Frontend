@@ -11,7 +11,7 @@ const initialState = {
 export default function(state = initialState, action){
   switch(action.type){
     case FETCH_TRIPS:
-      console.log("payload", action.payload)
+
       return{
         ...state,
         trips: action.payload
@@ -23,7 +23,7 @@ export default function(state = initialState, action){
       }
 
       case GET_TRIP:
-      console.log(action.payload.id)
+      
       return{
         ...state,
         [action.payload.id]: action.payload
