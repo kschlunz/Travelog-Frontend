@@ -20,7 +20,7 @@ class PlacesPage extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-
+      console.log(nextProps)
       if(nextProps.entry) {
         this.props.trip.entries.push(nextProps.entry)
        }
