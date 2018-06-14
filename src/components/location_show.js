@@ -5,6 +5,7 @@ import { getTrip, deleteTrip } from '../actions/tripAction';
 import LocationList from './LocationList';
 import { Link } from 'react-router-dom';
 import NewPlacesForm from '../containers/NewPlacesForm'
+import GoogleMaps from './GoogleMaps'
 
 class LocationShow extends React.Component{
 
@@ -44,7 +45,7 @@ class LocationShow extends React.Component{
 
   render(){
 
-    
+
 
     return(
       <div>
@@ -52,6 +53,7 @@ class LocationShow extends React.Component{
         <Link to='/homepage' class="btn-primary">Back To All Trips</Link>
         {this.callTrip()}
         <NewPlacesForm id={this.state.id}/>
+        <GoogleMaps />
       </div>
     )
   }

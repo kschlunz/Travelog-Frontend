@@ -5,6 +5,7 @@ import { getPlace, deletePlace } from '../actions/tripAction';
 import PlacesList from './PlacesList';
 import { Link } from 'react-router-dom';
 import NewEntriesForm from '../containers/NewEntriesForm'
+import GoogleMaps from './GoogleMaps'
 
 
 class PlacesPage extends React.Component{
@@ -20,14 +21,14 @@ class PlacesPage extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-      console.log(nextProps)
+
       if(nextProps.entry) {
         this.props.trip.entries.push(nextProps.entry)
        }
     }
 
   onDeleteClick = () => {
-    console.log(this.props.trip.trip_id)
+
     const {id} =  this.props.match.params;
     this.props.deletePlace(id, () =>{
       this.props.history.push(`/trips/${this.props.trip.trip_id}`)
@@ -37,7 +38,7 @@ class PlacesPage extends React.Component{
   linkBack = () => {
 
     if(this.props.trip){
-      console.log(this.props)
+
       return (<Link to={`/trips/${this.props.trip.trip_id}`}>Back to Trip Page</Link>)
     }else {
       return(<h1>loading</h1>)
@@ -58,9 +59,6 @@ class PlacesPage extends React.Component{
 
   render(){
 
-    //if delete is true re-direct to teh same page
-
-
     return(
       <div>
 
@@ -70,6 +68,8 @@ class PlacesPage extends React.Component{
         <button onClick={this.onDeleteClick}>Delete Place</button>
 
         <NewEntriesForm locationID = {this.state.locationID}/>
+        <p>I SHOULD BE HERE</p>
+        <GoogleMaps />
       </div>
     )
   }

@@ -128,9 +128,9 @@ export const deleteEntry = (id) => (dispatch) =>{
   .then(trip => {
 
     return dispatch({
-      type: DELETE_PLACE,
+      type: DELETE_ENTRY,
       payload: id
   })})
-    
+
 
 }

@@ -10,6 +10,7 @@ class AllEntries extends React.Component {
     const id =  this.props.tripData.entryID;
     console.log(id)
     this.props.deleteEntry(id)
+      
   }
 
 
