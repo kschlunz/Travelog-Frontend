@@ -19,6 +19,13 @@ class PlacesPage extends React.Component{
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+
+      if(nextProps.entry) {
+        this.props.trip.entries.push(nextProps.entry)
+       }
+    }
+
   onDeleteClick = () => {
     console.log(this.props.trip.trip_id)
     const {id} =  this.props.match.params;
@@ -27,6 +34,17 @@ class PlacesPage extends React.Component{
     })
   }
 
+  linkBack = () => {
+
+    if(this.props.trip){
+      console.log(this.props)
+      return (<Link to={`/trips/${this.props.trip.trip_id}`}>Back to Trip Page</Link>)
+    }else {
+      return(<h1>loading</h1>)
+    }
+
+
+  }
 
 
   callPlace = () => {
@@ -40,12 +58,13 @@ class PlacesPage extends React.Component{
 
   render(){
 
+    //if delete is true re-direct to teh same page
 
 
     return(
       <div>
 
-
+        {this.linkBack()}
         {this.callPlace()}
 
         <button onClick={this.onDeleteClick}>Delete Place</button>

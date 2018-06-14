@@ -7,3 +7,4 @@ export const GET_PLACE = 'GET_PLACE';
 export const NEW_ENTRY = 'NEW_ENTRY';
 export const DELETE_TRIP = 'DELETE_TRIP';
 export const DELETE_PLACE = 'DELETE_PLACE';
+export const DELETE_ENTRY = 'DELETE_ENTRY';

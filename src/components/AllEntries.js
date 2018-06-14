@@ -1,14 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
+import { deleteEntry } from '../actions/tripAction';
+import { Link } from 'react-router-dom';
 
-const AllEntries = (props) => {
+class AllEntries extends React.Component {
 
-  console.log(props.tripData)
+  onDeleteClick = () => {
+    const id =  this.props.tripData.entryID;
+    console.log(id)
+    this.props.deleteEntry(id)
+  }
 
-    return (
-    <h3>Description: {props.tripData.description} <br/> hotels: {props.tripData.hotels} <br/> restaurants: {props.tripData.restaurants} <br/> tours: {props.tripData.tours}<br/><br/> <button>Delete this entry</button></h3> 
 
-  )
+
+render(){
+
+return (
+  <h3>
+    Description: {this.props.tripData.description} <br/>
+    hotels: {this.props.tripData.hotels} <br/>
+    restaurants: {this.props.tripData.restaurants} <br/>
+    tours: {this.props.tripData.tours}<br/><br/>
+    <button onClick={this.onDeleteClick}>Delete this entry</button>
+  </h3>
+)
 }
 
-export default AllEntries
+}
+
+
+
+
+export default connect(null, {deleteEntry})(AllEntries)

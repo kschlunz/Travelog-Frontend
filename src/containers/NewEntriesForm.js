@@ -38,7 +38,7 @@ class NewEntriesForm extends React.Component {
       tours: '',
 
         })
-        console.log(this.props.locationID);
+        
         this.props.createEntry(newEntry);
 
   }

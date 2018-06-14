@@ -65,7 +65,7 @@ class TripForm extends React.Component {
 
 
             <div>
-              <label>Flights:</label>
+              <label>Transportation:</label>
               <br />
               <input type="textarea" name="flights" onChange={this.handleChange} value={this.state.flights} />
             </div>

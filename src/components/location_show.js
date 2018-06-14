@@ -20,7 +20,7 @@ class LocationShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-      console.log(nextProps);
+
       if(nextProps.place) {
         this.props.trip.places.push(nextProps.place)
        }
@@ -44,7 +44,7 @@ class LocationShow extends React.Component{
 
   render(){
 
-    console.log(this.state.id)
+    
 
     return(
       <div>
