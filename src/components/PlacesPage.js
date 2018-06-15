@@ -57,6 +57,14 @@ class PlacesPage extends React.Component{
     }
   }
 
+  passDataToMap = () => {
+    if(this.props.trip){
+      return(<GoogleMaps placeData={this.props.trip} />)
+    }else {
+      return (<h1>LOADING</h1>)
+    }
+  }
+
   render(){
 
     return(
@@ -68,8 +76,9 @@ class PlacesPage extends React.Component{
         <button onClick={this.onDeleteClick}>Delete Place</button>
 
         <NewEntriesForm locationID = {this.state.locationID}/>
-        
-        <GoogleMaps />
+        <br />
+        <br />
+        {this.passDataToMap()}
       </div>
     )
   }
