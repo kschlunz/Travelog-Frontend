@@ -68,7 +68,7 @@ class PlacesPage extends React.Component{
         <button onClick={this.onDeleteClick}>Delete Place</button>
 
         <NewEntriesForm locationID = {this.state.locationID}/>
-        <p>I SHOULD BE HERE</p>
+        
         <GoogleMaps />
       </div>
     )

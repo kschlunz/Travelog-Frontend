@@ -34,19 +34,7 @@ class NewPlacesForm extends React.Component {
     return(
       <div>
         <h1>Add A New Place</h1>
-          <form onSubmit={this.handleSubmit}>
-
-            <div>
-              <label>Location:</label>
-              <br />
-              <input type="text" name="location" onChange={this.handleChange} value={this.state.location} />
-            </div>
-              <br />
-
-
-            <button type="submit">Submit</button>
-
-          </form>
+          
       </div>
 
     )
