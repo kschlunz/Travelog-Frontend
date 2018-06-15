@@ -37,6 +37,14 @@ class LocationShow extends React.Component{
     }
   }
 
+  passTripInfor = () => {
+    if (this.props.trip){
+      return (<Autofill trip = {this.props} id={this.state.id} />)
+    }else {
+      return (<h1>No info yet </h1>)
+    }
+  }
+
   onDeleteClick = () => {
     const {id} =  this.props.match.params;
     this.props.deleteTrip(id, () =>{
@@ -46,7 +54,7 @@ class LocationShow extends React.Component{
 
   render(){
 
-
+    console.log(this.props)
 
     return(
       <div>
@@ -54,7 +62,7 @@ class LocationShow extends React.Component{
         <Link to='/homepage' class="btn-primary">Back To All Trips</Link>
         {this.callTrip()}
         <NewPlacesForm id={this.state.id}/>
-        <Autofill id={this.state.id} />
+        {this.passTripInfor()}
       </div>
     )
   }

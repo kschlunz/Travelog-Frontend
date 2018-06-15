@@ -11,11 +11,13 @@ class Autofill extends Component {
     activeMarker: {},
     selectedPlace: {},
     trip_id: this.props.id,
-    placeData: {}
+    placeData: {},
+    center: {lat:0,lng:0}
   };
 
   componentDidMount() {
     this.renderAutoComplete();
+    this.calculateCenter();
 
   }
 
@@ -78,16 +80,27 @@ class Autofill extends Component {
     }
   }
 
-  render() {
-    const { position } = this.state;
-      console.log({position})
+  calculateCenter = () => {
+    const places = this.props.trip.trip.places
+    this.setState({center:{
+      lat: places.reduce((total, place) => {
+        return total+place.lat
+      }, 0)/places.length ,
+      lng: places.reduce((total, place) => {
+        return total+place.lng
+      }, 0)/places.length
+    }})
+  }
 
-    const markers = [<Marker
-    onClick = { this.onMarkerClick }
-    title = { 'Changing Colors Garage' }
-    position = {position}
-    name = { 'Changing Colors Garage' }
-  />]
+  render() {
+
+    const { position } = this.state;
+
+
+    const markers = this.props.trip.trip.places.map((place) => {
+      return <Marker onClick = { this.onMarkerClick }
+              position = {{lat:place.lat, lng:place.lng}} />
+    })
     return (
       <div className={styles.flexWrapper}>
         <div className={styles.left}>
@@ -98,7 +111,7 @@ class Autofill extends Component {
               type="text"
             />
 
-          
+
             <button type="submit" onClick={this.handleSubmit}>Save Place</button><br/>
           </form>
 
@@ -110,8 +123,8 @@ class Autofill extends Component {
         <div className={styles.right}>
           <Map
             {...this.props}
-            center={position}
-            centerAroundCurrentLocation={true}
+            center={this.state.center}
+            zoom = {6}
             containerStyle={{
               height: '75vh',
               position: 'relative',
@@ -133,8 +146,10 @@ class Autofill extends Component {
   }
 }
 
+function mapStateToProps(state){
+  state: state
+}
 
-
-export default connect(null, {createPlace})(GoogleApiWrapper({
+export default connect(mapStateToProps, {createPlace})(GoogleApiWrapper({
     apiKey: ("AIzaSyC4WyhZwCUxnclM61INQrbBQt4MH2qFm0E")
 })(Autofill))
