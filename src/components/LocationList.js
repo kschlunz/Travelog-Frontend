@@ -1,6 +1,7 @@
 import React from 'react'
 import AllLocations from './AllLocations'
 import { Link } from 'react-router-dom';
+import { Header } from 'semantic-ui-react'
 
 
 
@@ -21,10 +22,8 @@ render(){
   return (
     <div>
 
-        <h1>{this.props.trip.trip.name}</h1>
-        <p>Trip Description: {this.props.trip.trip.description}</p>
-        <p>Trip Dates: {this.props.trip.trip.dates}</p>
-        <p>Trip Transportation: {this.props.trip.trip.flights}</p>
+        <Header as='h1' textAlign='center'>{this.props.trip.trip.name}</Header>
+        <Header as='h3' textAlign='center'>{this.props.trip.trip.description} <br></br>{this.props.trip.trip.dates} <br></br>Transportation: {this.props.trip.trip.flights}</Header>
 
         <ul>
          {this.call()}

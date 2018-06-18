@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { createTrip } from '../actions/tripAction'
 import PropTypes from 'prop-types';
+import {Form, Button, TextArea} from 'semantic-ui-react'
 
 class TripForm extends React.Component {
   state={
@@ -38,7 +39,7 @@ class TripForm extends React.Component {
     return(
       <div>
         <h1>Add A New Trip</h1>
-          <form onSubmit={this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit}>
 
             <div>
               <label>Name:</label>
@@ -50,29 +51,26 @@ class TripForm extends React.Component {
               <div>
                 <label>Description:</label>
                 <br />
-                <input type="textarea" name="description" onChange={this.handleChange} value={this.state.description} />
+                <TextArea type="text" name="description" onChange={this.handleChange} value={this.state.description} />
               </div>
               <br />
 
                 <div>
                   <label>Dates:</label>
                   <br />
-                  <input type="textarea" name="date" onChange={this.handleChange} value={this.state.date} />
+                  <input type="date" name="date" onChange={this.handleChange} value={this.state.date} />
                 </div>
                 <br />
-
-
-
 
             <div>
               <label>Transportation:</label>
               <br />
-              <input type="textarea" name="flights" onChange={this.handleChange} value={this.state.flights} />
+              <TextArea type="text" name="flights" onChange={this.handleChange} value={this.state.flights} />
             </div>
             <br />
-            <button type="submit">Submit</button>
+            <Button type="submit">Submit</Button>
 
-          </form>
+          </Form>
       </div>
 
     )

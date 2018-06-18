@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { createPlace } from '../actions/tripAction'
 import PropTypes from 'prop-types';
+import {Form, Button, TextArea} from 'semantic-ui-react'
 
 class NewPlacesForm extends React.Component {
   state={
@@ -34,7 +35,7 @@ class NewPlacesForm extends React.Component {
     return(
       <div>
         <h1>Add A New Place</h1>
-          
+
       </div>
 
     )

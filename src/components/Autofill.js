@@ -3,6 +3,7 @@ import styles from './autocomplete.module.css';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import {connect} from 'react-redux'
 import { createPlace } from '../actions/tripAction'
+import {Form, Button} from 'semantic-ui-react'
 
 class Autofill extends Component {
   state = {
@@ -94,6 +95,8 @@ class Autofill extends Component {
 
   render() {
 
+
+
     const { position } = this.state;
 
 
@@ -104,7 +107,7 @@ class Autofill extends Component {
     return (
       <div className={styles.flexWrapper}>
         <div className={styles.left}>
-          <form onSubmit={this.onSubmit}>
+          <Form onSubmit={this.onSubmit}>
             <input
               placeholder="Enter a location"
               ref={ref => (this.autocomplete = ref)}
@@ -112,8 +115,8 @@ class Autofill extends Component {
             />
 
 
-            <button type="submit" onClick={this.handleSubmit}>Save Place</button><br/>
-          </form>
+          <Button type="submit" onClick={this.handleSubmit}>Save Place</Button><br/>
+          </Form>
 
 
         </div>
@@ -138,7 +141,7 @@ class Autofill extends Component {
           visible = { this.state.showingInfoWindow }
           >
 
-          <h1>This is a place</h1>
+          <h1></h1>
         </InfoWindow>
           </Map>
         </div>

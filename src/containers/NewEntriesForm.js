@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { createEntry } from '../actions/tripAction'
 import PropTypes from 'prop-types';
+import {Form, Button, TextArea} from 'semantic-ui-react'
 
 class NewEntriesForm extends React.Component {
   state={
@@ -38,7 +39,7 @@ class NewEntriesForm extends React.Component {
       tours: '',
 
         })
-        
+
         this.props.createEntry(newEntry);
 
   }
@@ -46,41 +47,41 @@ class NewEntriesForm extends React.Component {
   render () {
     return(
       <div>
-        <h1>Add A New Entry</h1>
-          <form onSubmit={this.handleSubmit}>
+        <h3>Add A New Entry</h3>
+          <Form onSubmit={this.handleSubmit}>
 
             <div>
               <label>Description of Visit:</label>
               <br />
-              <input type="text" name="description" onChange={this.handleChange} value={this.state.description} />
+              <TextArea type="text" name="description" onChange={this.handleChange} value={this.state.description} />
             </div>
               <br />
 
               <div>
                 <label>Restaurants:</label>
                 <br />
-                <input type="text" name="restaurants" onChange={this.handleChange} value={this.state.restaurants} />
+                <TextArea type="text" name="restaurants" onChange={this.handleChange} value={this.state.restaurants} />
               </div>
                 <br />
 
                 <div>
                   <label>Accomodations:</label>
                   <br />
-                  <input type="text" name="hotels" onChange={this.handleChange} value={this.state.hotels} />
+                  <TextArea type="text" name="hotels" onChange={this.handleChange} value={this.state.hotels} />
                 </div>
                   <br />
 
                   <div>
                     <label>Tours:</label>
                     <br />
-                    <input type="text" name="tours" onChange={this.handleChange} value={this.state.tours} />
+                    <TextArea type="text" name="tours" onChange={this.handleChange} value={this.state.tours} />
                   </div>
                     <br />
 
 
-            <button type="submit">Submit</button>
+            <Button type="submit">Submit</Button>
 
-          </form>
+          </Form>
       </div>
 
     )

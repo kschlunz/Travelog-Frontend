@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 import NewPlacesForm from '../containers/NewPlacesForm'
 import GoogleMaps from './GoogleMaps'
 import Autofill from './Autofill'
+import { Container, Divider, Button, Grid, Image } from 'semantic-ui-react'
+
+
 
 class LocationShow extends React.Component{
 
@@ -54,16 +57,27 @@ class LocationShow extends React.Component{
 
   render(){
 
-    console.log(this.props)
 
     return(
-      <div>
-        <button onClick={this.onDeleteClick}>Delete Trip</button>
-        <Link to='/homepage' class="btn-primary">Back To All Trips</Link>
-        {this.callTrip()}
-        <NewPlacesForm id={this.state.id}/>
-        {this.passTripInfor()}
+
+
+      <div class="ui clearing segment">
+        <h2><Link textAlign='left' to='/homepage'>Back To All Trips</Link></h2><br></br>
+        <Button textAlign='left' onClick={this.onDeleteClick}>Delete Trip</Button>
+
+        <Grid divided='vertically'>
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              {this.callTrip()}
+            </Grid.Column>
+            <Grid.Column>
+              {this.passTripInfor()}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+
       </div>
+
     )
   }
 }

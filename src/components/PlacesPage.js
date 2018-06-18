@@ -6,6 +6,8 @@ import PlacesList from './PlacesList';
 import { Link } from 'react-router-dom';
 import NewEntriesForm from '../containers/NewEntriesForm'
 import GoogleMaps from './GoogleMaps'
+import {Form, Button} from 'semantic-ui-react'
+import { Container, Divider, Grid } from 'semantic-ui-react'
 
 
 class PlacesPage extends React.Component{
@@ -68,17 +70,34 @@ class PlacesPage extends React.Component{
   render(){
 
     return(
+
+
       <div>
 
-        {this.linkBack()}
-        {this.callPlace()}
+        <br></br>
+        <div class="ui clearing segment">
+        <Container textAlign='left'><h3 className="ui left floated header">{this.linkBack()}</h3></Container>
+        <Container textAlign='right'><Button class="ui right floated button header" onClick={this.onDeleteClick}>Delete Place</Button></Container>
+        <Container textAlign='center'><h1>{this.callPlace()}</h1></Container>
+      </div>
 
-        <button onClick={this.onDeleteClick}>Delete Place</button>
+      <Grid divided='vertically'>
+        <Grid.Row columns={3}>
+          <Grid.Column>
+            <NewEntriesForm locationID = {this.state.locationID}/>
+          </Grid.Column>
+          <Grid.Column>
+            {this.passDataToMap()}
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
 
-        <NewEntriesForm locationID = {this.state.locationID}/>
-        <br />
-        <br />
-        {this.passDataToMap()}
+
+
+
+
+
+
       </div>
     )
   }

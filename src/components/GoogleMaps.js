@@ -35,8 +35,8 @@ class GoogleMapsContainer extends React.Component {
       console.log(this.props.placeData.lat)
 
       const style = {
-        width: '95vw',
-        height: '75vh',
+        width: '65vw',
+        height: '65vh',
         'marginLeft': 'auto',
         'marginRight': 'auto'
       }

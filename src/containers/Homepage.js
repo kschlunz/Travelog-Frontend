@@ -5,6 +5,7 @@ import TripContainer from './TripContainer'
 import TripForm from './TripForm'
 import PropTypes from 'prop-types';
 import GoogleMaps from '../components/GoogleMaps'
+import { List, Header, Grid, Image } from 'semantic-ui-react'
 
 
 class Homepage extends React.Component {
@@ -32,10 +33,23 @@ callTripContainer = () => {
 
     return(
       <div>
-        {this.props.loggedIn ? <h1>Logged In</h1> : <h1>You ain't logged in</h1>}
-        {this.callTripContainer()}
-        <TripForm />
-        
+        <Header as='h1' textAlign= 'center'>Travelog</Header>
+        <Header as='h3' textAlign='left'>{this.props.loggedIn ? <h3>Logged In</h3> : <h3>Please Login</h3>}</Header>
+        <br></br>
+          <Grid divided='vertically'>
+            <Grid.Row columns={2}>
+              <Grid.Column>
+                {this.callTripContainer()}
+              </Grid.Column>
+              <Grid.Column>
+                <TripForm />
+              </Grid.Column>
+
+            </Grid.Row>
+          </Grid>
+
+
+
       </div>
     )
 

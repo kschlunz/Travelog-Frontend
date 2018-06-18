@@ -3,6 +3,7 @@ import AllEntries from './AllEntries'
 import { connect } from 'react-redux';
 import { deleteEntry } from '../actions/tripAction';
 import { Link } from 'react-router-dom'
+import { Button, Card, Image } from 'semantic-ui-react'
 
 
 
@@ -23,11 +24,12 @@ class PlacesList extends React.Component  {
 
 render(){
   return (
-    <div>
-      <h1>{this.props.place.trip.location}</h1>
-
+    <div class="ui segment">
+      <h1 className="ui center aligned header">{this.props.place.trip.location}</h1>
       <ul>
-       {this.call()}
+        <Card.Group>
+            {this.call()}
+        </Card.Group>
       </ul>
     </div>
   )
