@@ -136,9 +136,10 @@ class Autofill extends Component {
         <InfoWindow
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
+          >
 
-        />
-
+          <h1>This is a place</h1>
+        </InfoWindow>
           </Map>
         </div>
       </div>
