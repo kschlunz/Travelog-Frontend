@@ -6,6 +6,8 @@ import TripForm from './TripForm'
 import PropTypes from 'prop-types';
 import GoogleMaps from '../components/GoogleMaps'
 import { List, Header, Grid, Image } from 'semantic-ui-react'
+import AllPlacesMap from '../components/AllPlacesMap'
+import { Link } from 'react-router-dom';
 
 
 class Homepage extends React.Component {
@@ -29,6 +31,14 @@ callTripContainer = () => {
   }
 }
 
+passToMap = () => {
+  if(this.props.trips){
+    console.log(this.props.trips.trips)
+    return(<AllPlacesMap trip={this.props.trips.trips}/>)
+  }else{
+    return (<h1>No Trips Yet</h1>)
+  }
+}
 
   render () {
 
@@ -59,7 +69,8 @@ callTripContainer = () => {
         </div>
 
         <div class="ui vertical footer segment form-page">
-
+          
+          {this.passToMap()}
         </div>
 
 

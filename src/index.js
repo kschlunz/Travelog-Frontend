@@ -12,6 +12,7 @@ import LocationShow from './components/location_show'
 import Login from './components/Login';
 import PlacesPage from './components/PlacesPage'
 import 'semantic-ui-css/semantic.min.css';
+import AllPlacesMap from './components/AllPlacesMap'
 
 ReactDOM.render(
 
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Route path="/homepage" component={Homepage}/>
 
           <Route path="/places/:id" component={PlacesPage}/>
+        
 
       </div>
 
