@@ -63,7 +63,7 @@ class LocationShow extends React.Component{
 
       <div class="ui clearing segment">
         <h2><Link textAlign='left' to='/homepage'>Back To All Trips</Link></h2><br></br>
-        <Button textAlign='left' onClick={this.onDeleteClick}>Delete Trip</Button>
+
 
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
@@ -75,8 +75,12 @@ class LocationShow extends React.Component{
             </Grid.Column>
           </Grid.Row>
         </Grid>
-
+        <div class="ui vertical footer segment form-page">
+            <Button textAlign='left' onClick={this.onDeleteClick}>Delete Trip</Button>
+        </div>
       </div>
+
+
 
     )
   }

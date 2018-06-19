@@ -83,27 +83,36 @@ class Autofill extends Component {
 
   calculateCenter = () => {
     const places = this.props.trip.trip.places
-    this.setState({center:{
-      lat: places.reduce((total, place) => {
-        return total+place.lat
-      }, 0)/places.length ,
-      lng: places.reduce((total, place) => {
-        return total+place.lng
-      }, 0)/places.length
-    }})
+    if(this.props.trip.trip.places){
+      return(this.setState({center:{
+        lat: places.reduce((total, place) => {
+          return total+place.lat
+        }, 0)/places.length ,
+        lng: places.reduce((total, place) => {
+          return total+place.lng
+        }, 0)/places.length
+      }}))
+    }else{
+      return(<h1>no info yet</h1>)
+    }
+
+  }
+
+  callTrip = () => {
+
+    if (this.props.trip.trip.places){
+      return (this.props.trip.trip.places.map((place) => {
+        return <Marker onClick = { this.onMarkerClick }
+                position = {{lat:place.lat, lng:place.lng}} />
+      }))
+    }else {
+      return (<h1>No info yet </h1>)
+    }
   }
 
   render() {
-
-
-
     const { position } = this.state;
 
-
-    const markers = this.props.trip.trip.places.map((place) => {
-      return <Marker onClick = { this.onMarkerClick }
-              position = {{lat:place.lat, lng:place.lng}} />
-    })
     return (
       <div className={styles.flexWrapper}>
         <div className={styles.left}>
@@ -113,16 +122,14 @@ class Autofill extends Component {
               ref={ref => (this.autocomplete = ref)}
               type="text"
             />
-
-
           <Button type="submit" onClick={this.handleSubmit}>Save Place</Button><br/>
           </Form>
-
-
         </div>
+
         <br/>
         <br/>
         <br/>
+        
         <div className={styles.right}>
           <Map
             {...this.props}
@@ -134,7 +141,7 @@ class Autofill extends Component {
               width: '100%',
 
             }}>
-            {markers}
+            {this.callTrip()}
 
         <InfoWindow
           marker = { this.state.activeMarker }

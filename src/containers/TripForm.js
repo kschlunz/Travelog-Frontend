@@ -38,7 +38,7 @@ class TripForm extends React.Component {
   render () {
     return(
       <div>
-        <h1>Add A New Trip</h1>
+        <h2>Add A New Trip</h2>
           <Form onSubmit={this.handleSubmit}>
 
             <div>
@@ -58,7 +58,7 @@ class TripForm extends React.Component {
                 <div>
                   <label>Dates:</label>
                   <br />
-                  <input type="date" name="date" onChange={this.handleChange} value={this.state.date} />
+                  <input type="text" name="date" onChange={this.handleChange} value={this.state.date} />
                 </div>
                 <br />
 

@@ -9,6 +9,7 @@ const TripList = (props) => {
 
 
     return (
+      
 
       <List>
             <List.Item>
@@ -17,10 +18,11 @@ const TripList = (props) => {
             <List.Header as='a'>
               <h1><Link to={`/trips/${props.tripData.tripID}`}>{props.tripData.name}</Link></h1>
               </List.Header>
-              
+
             </List.Content>
             </List.Item>
       </List>
+
 
 
 

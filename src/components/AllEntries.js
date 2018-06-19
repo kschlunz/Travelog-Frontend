@@ -24,11 +24,12 @@ return (
 
   <Card>
     <Card.Content>
-      <Image floated='right' size='mini' src='' />
-      <Card.Description>Description: {this.props.tripData.description}</Card.Description>
-      <Card.Description>hotels: {this.props.tripData.hotels}</Card.Description>
-      <Card.Description>restaurants: {this.props.tripData.restaurants}</Card.Description>
-      <Card.Description>  tours: {this.props.tripData.tours}</Card.Description>
+      <Image floated='right' size='large' src={this.props.tripData.photos} />
+      <p>{this.props.tripData.description}</p>
+      <p>hotels: {this.props.tripData.hotels}</p>
+      <p>restaurants: {this.props.tripData.restaurants}</p>
+      <p>tours: {this.props.tripData.tours}</p>
+
       <Button onClick={this.onDeleteClick}>Delete this entry</Button>
     </Card.Content>
   </Card>

@@ -18,10 +18,8 @@ ReactDOM.render(
   <Provider store={Store}>
 
     <BrowserRouter>
-      
-      <div class="hero-unit" >
-        <div class="hero-unit__background-image">
-        </div>
+
+      <div>
           <Route path="/Login" component={Login}/>
           <Route path="/trips/:id" component={LocationShow}/>
           <Route path="/homepage" component={Homepage}/>

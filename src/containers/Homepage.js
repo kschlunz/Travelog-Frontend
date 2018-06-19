@@ -25,29 +25,42 @@ callTripContainer = () => {
   if (this.props.trips){
     return (<TripContainer trip = {this.props} />)
   }else {
-    return (<h1>No Trips Yet Fam</h1>)
+    return (<h1>No Trips Yet</h1>)
   }
 }
+
 
   render () {
 
     return(
-      <div>
-        <Header as='h1' textAlign= 'center'>Travelog</Header>
-        <Header as='h3' textAlign='left'>{this.props.loggedIn ? <h3>Logged In</h3> : <h3>Please Login</h3>}</Header>
+      <div >
+        <center><p className="largetext">Travelog</p></center>
         <br></br>
-          <Grid divided='vertically'>
-            <Grid.Row columns={2}>
-              <Grid.Column>
-                {this.callTripContainer()}
+          <Grid divided='vertically' columns={4} padded='horizontally'>
+            <Grid.Row stretched verticalAlign='middle'>
+              <Grid.Column width={2}>
+
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column width={7}>
+                  {this.callTripContainer()}
+              </Grid.Column>
+              <Grid.Column width={6} verticalAlign='middle'>
                 <TripForm />
+              </Grid.Column>
+              <Grid.Column width={8}>
               </Grid.Column>
 
             </Grid.Row>
-          </Grid>
 
+          </Grid>
+          <div className="hero-unit">
+            <div className="hero-unit__background-image">
+        </div>
+        </div>
+
+        <div class="ui vertical footer segment form-page">
+
+        </div>
 
 
       </div>

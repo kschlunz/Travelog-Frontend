@@ -15,7 +15,7 @@
 
 body{
   font-weight: bold;
-  
+
 }
 
 .hero-unit__background-image {
@@ -25,14 +25,14 @@ body{
   height: 100%;
   background-image: url("https://www.ihdimages.com/wp-content/uploadsktz/2014/11/vintage_travel_cool_wallpapers.jpg");
   background-size: cover;
-  opacity: 0.4;
+  opacity: 0.3;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
 }
 
-.large.text {
-   font-size: 2rem;
-   font-weight: bold;
+.largetext {
+   font-size: 7rem;
+   font-family: Baskerville;
 }

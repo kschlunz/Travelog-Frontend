@@ -11,7 +11,8 @@ class NewEntriesForm extends React.Component {
     restaurants: '',
     hotels: '',
     tours: '',
-    user_id: 1
+    user_id: 1,
+    photos: '',
 
   }
 
@@ -28,7 +29,8 @@ class NewEntriesForm extends React.Component {
       restaurants: this.state.restaurants,
       hotels: this.state.hotels,
       tours: this.state.tours,
-      user_id: this.state.user_id
+      user_id: this.state.user_id,
+      photos: this.state.photos
     }
 
     this.setState({
@@ -37,6 +39,7 @@ class NewEntriesForm extends React.Component {
       restaurants: '',
       hotels: '',
       tours: '',
+      photos: ''
 
         })
 
@@ -77,6 +80,11 @@ class NewEntriesForm extends React.Component {
                     <TextArea type="text" name="tours" onChange={this.handleChange} value={this.state.tours} />
                   </div>
                     <br />
+                  <div>
+                    <label>Photo Image URL:</label>
+                      
+                      <input type="text" name="photos" onChange={this.handleChange} value={this.state.photos}/>
+                  </div>
 
 
             <Button type="submit">Submit</Button>
