@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './autocomplete.module.css';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import {connect} from 'react-redux'
-import { createPlace } from '../actions/tripAction'
+import { createPlace, getPlace } from '../actions/tripAction'
 import {Form, Button} from 'semantic-ui-react'
 
 class Autofill extends Component {
@@ -13,7 +13,8 @@ class Autofill extends Component {
     selectedPlace: {},
     trip_id: this.props.id,
     placeData: {},
-    center: {lat:0,lng:0}
+    center: {lat:0,lng:0},
+    fetch: false
   };
 
   componentDidMount() {
@@ -63,6 +64,8 @@ class Autofill extends Component {
     e.preventDefault()
 
     this.props.createPlace(this.state.placeData)
+
+
   }
 
   onMarkerClick = (props, marker, e) => {
@@ -114,8 +117,8 @@ class Autofill extends Component {
     const { position } = this.state;
 
     return (
-      <div className={styles.flexWrapper}>
-        <div className={styles.left}>
+      <div className='outmapdiv'>
+        <div className='mapdiv'>
           <Form onSubmit={this.onSubmit}>
             <input
               placeholder="Enter a location"
@@ -129,14 +132,14 @@ class Autofill extends Component {
         <br/>
         <br/>
         <br/>
-        
+
         <div className={styles.right}>
           <Map
             {...this.props}
             center={this.state.center}
             zoom = {6}
             containerStyle={{
-              height: '75vh',
+              height: '85vh',
               position: 'relative',
               width: '100%',
 
@@ -161,6 +164,6 @@ function mapStateToProps(state){
   state: state
 }
 
-export default connect(mapStateToProps, {createPlace})(GoogleApiWrapper({
+export default connect(mapStateToProps, {createPlace, getPlace})(GoogleApiWrapper({
     apiKey: ("AIzaSyC4WyhZwCUxnclM61INQrbBQt4MH2qFm0E")
 })(Autofill))

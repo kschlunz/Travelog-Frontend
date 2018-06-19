@@ -4,6 +4,7 @@ import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import {connect} from 'react-redux'
 import { createPlace } from '../actions/tripAction'
 import {Form, Button} from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 
 class AllPlacesMap extends Component {
   state = {
@@ -24,6 +25,21 @@ class AllPlacesMap extends Component {
       showingInfoWindow: true
     });
   }
+
+  // onMarkerClick = (event) => {
+  //   console.log(event)
+  //   console.log(this.props.trip)
+  //   let tripA = this.props.trip.map((t)=>{return t.places})
+  //   let myNew = [].concat(...tripA);
+  //   let places= myNew.map((m)=>{
+  //     console.log(m)
+  //
+  //     return(<Link to={`/places/${m.locationID}`}/>)
+  //
+  //   })
+  //   return places
+  // }
+
   onMapClick = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -43,7 +59,7 @@ class AllPlacesMap extends Component {
       let myNewArray4 = [].concat(...tripArray);
       let placesArray= myNewArray4.map((m)=> {
             return (<Marker onClick = { this.onMarkerClick }
-                    position = {{lat:m.lat, lng:m.lng}} />)
+                    position = {{lat:m.lat, lng:m.lng}} placeName = {m.location} />)
       })
 
       return placesArray
@@ -54,6 +70,7 @@ class AllPlacesMap extends Component {
 
   render() {
     console.log(this.callTrip())
+
 
     return (
       <div className={styles.flexWrapper}>
@@ -83,7 +100,7 @@ class AllPlacesMap extends Component {
           visible = { this.state.showingInfoWindow }
           >
 
-          <h1></h1>
+          <h1>{this.state.activeMarker.placeName}</h1>
         </InfoWindow>
           </Map>
         </div>

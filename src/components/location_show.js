@@ -25,14 +25,12 @@ class LocationShow extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-
       if(nextProps.place) {
         this.props.trip.places.push(nextProps.place)
        }
     }
 
   callTrip = () => {
-
     if (this.props.trip){
       return (<LocationList trip = {this.props} />)
     }else {
@@ -56,13 +54,9 @@ class LocationShow extends React.Component{
   }
 
   render(){
-
-
     return(
-
-
-      <div class="ui clearing segment">
-        <h2><Link textAlign='left' to='/homepage'>Back To All Trips</Link></h2><br></br>
+      <div className="whatdiv">
+        <p className="backlink"><Link textAlign='left' to='/homepage'>Back To All Trips</Link></p><br></br>
 
 
         <Grid divided='vertically'>
@@ -70,7 +64,7 @@ class LocationShow extends React.Component{
             <Grid.Column>
               {this.callTrip()}
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column width={7}>
               {this.passTripInfor()}
             </Grid.Column>
           </Grid.Row>

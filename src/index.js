@@ -24,9 +24,8 @@ ReactDOM.render(
           <Route path="/Login" component={Login}/>
           <Route path="/trips/:id" component={LocationShow}/>
           <Route path="/homepage" component={Homepage}/>
-
           <Route path="/places/:id" component={PlacesPage}/>
-        
+
 
       </div>
 

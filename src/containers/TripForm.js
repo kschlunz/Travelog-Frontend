@@ -67,7 +67,7 @@ class TripForm extends React.Component {
               <TextArea type="text" name="flights" onChange={this.handleChange} value={this.state.flights} />
             </div>
             <br />
-            <Button type="submit">Submit</Button>
+            <Button type="submit">Save</Button>
 
           </Form>
       </div>

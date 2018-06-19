@@ -9,10 +9,10 @@ const AllLocations = (props) => {
     return (
       <List>
         <List.Item>
-        <List.Icon name='marker' />
+        <List.Icon name='marker' className="marker"/>
       <List.Content>
         <List.Header as='a'>
-          <Link to={`/places/${props.tripData.locationID}`}><h1>{props.tripData.location}</h1></Link>
+          <Link to={`/places/${props.tripData.locationID}`}><h1 className="placename">{props.tripData.location}</h1></Link>
         </List.Header>
       </List.Content>
       </List.Item>
