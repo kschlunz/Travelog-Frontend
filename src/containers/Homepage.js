@@ -69,7 +69,7 @@ passToMap = () => {
         </div>
 
         <div class="ui vertical footer segment form-page">
-          
+
           {this.passToMap()}
         </div>
 

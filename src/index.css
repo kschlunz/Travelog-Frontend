@@ -34,5 +34,18 @@ body{
 
 .largetext {
    font-size: 7rem;
-   font-family: Baskerville;
+   font-family: 'Libre Baskerville', serif;
+   font-weight: bolder;
+}
+
+.listcontainer{
+  font-size: 2.5rem;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bolder;
+  background: rgba(255,255,255, 0.35)
+
+}
+
+.text{
+  font-family: 'Libre Baskerville', serif;
 }

@@ -5,28 +5,18 @@ import { List, Header } from 'semantic-ui-react'
 
 
 const TripList = (props) => {
-
-
-
     return (
-      
-
       <List>
             <List.Item>
             <List.Icon name='marker' />
               <List.Content>
             <List.Header as='a'>
-              <h1><Link to={`/trips/${props.tripData.tripID}`}>{props.tripData.name}</Link></h1>
+              <h1 className="listcontainer"><Link to={`/trips/${props.tripData.tripID}`}>{props.tripData.name}</Link></h1>
               </List.Header>
 
             </List.Content>
             </List.Item>
       </List>
-
-
-
-
-
   )
 }
 

@@ -69,7 +69,7 @@ class AllPlacesMap extends Component {
           <Map
             {...this.props}
             center={this.state.center}
-            zoom = {2}
+            zoom = {2.75}
             containerStyle={{
               height: '75vh',
               position: 'relative',

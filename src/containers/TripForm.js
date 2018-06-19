@@ -32,38 +32,37 @@ class TripForm extends React.Component {
           name: '', description: '', date: '', flights: ''
         })
         this.props.createTrip(newTrip);
-
   }
 
   render () {
     return(
       <div>
-        <h2>Add A New Trip</h2>
+        <h2 className="text">Add A New Trip</h2>
           <Form onSubmit={this.handleSubmit}>
 
             <div>
-              <label>Name:</label>
+              <label className="text">Name:</label>
               <br />
               <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
             </div>
               <br />
 
               <div>
-                <label>Description:</label>
+                <label className="text">Description:</label>
                 <br />
                 <TextArea type="text" name="description" onChange={this.handleChange} value={this.state.description} />
               </div>
               <br />
 
                 <div>
-                  <label>Dates:</label>
+                  <label className="text">Dates:</label>
                   <br />
                   <input type="text" name="date" onChange={this.handleChange} value={this.state.date} />
                 </div>
                 <br />
 
             <div>
-              <label>Transportation:</label>
+              <label className="text">Transportation:</label>
               <br />
               <TextArea type="text" name="flights" onChange={this.handleChange} value={this.state.flights} />
             </div>
