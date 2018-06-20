@@ -33,7 +33,7 @@ class NewPlacesForm extends React.Component {
 
   render () {
     return(
-      <div>
+      <div className="formpadding">
         <h1>Add A New Place</h1>
 
       </div>

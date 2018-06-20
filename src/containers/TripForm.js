@@ -32,6 +32,7 @@ class TripForm extends React.Component {
           name: '', description: '', date: '', flights: ''
         })
         this.props.createTrip(newTrip);
+
   }
 
   render () {
@@ -43,7 +44,7 @@ class TripForm extends React.Component {
             <div>
               <label className="text">Name:</label>
               <br />
-              <input type="text" name="name" onChange={this.handleChange} value={this.state.name} />
+              <input required type="text" name="name" onChange={this.handleChange} value={this.state.name} />
             </div>
               <br />
 
@@ -82,4 +83,4 @@ TripForm.propTypes = {
 
 }
 
-export default connect(null, { createTrip })(TripForm);
+export default connect(null, { createTrip})(TripForm);

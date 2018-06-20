@@ -25,10 +25,10 @@ class PlacesList extends React.Component  {
 render(){
   return (
     <div class="ui segment">
-      <h1 className="ui center aligned header">{this.props.place.trip.location}</h1>
-      <ul>
+      <h1 className="ui center aligned header" className="cardname">{this.props.place.trip.location}</h1>
+      <ul className="whatdiv">
         <Card.Group>
-            {this.call()}
+          {this.call()}
         </Card.Group>
       </ul>
     </div>

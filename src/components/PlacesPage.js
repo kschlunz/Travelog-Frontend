@@ -23,10 +23,11 @@ class PlacesPage extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-
       if(nextProps.entry) {
         this.props.trip.entries.push(nextProps.entry)
-       }
+      }else {
+        return(<h1>Loading</h1>)
+      }
     }
 
   onDeleteClick = () => {
@@ -70,13 +71,10 @@ class PlacesPage extends React.Component{
   render(){
 
     return(
-
-
-      <div>
-
+      <div className="whatdiv">
         <br></br>
-        <div class="ui clearing segment">
-        <Container textAlign='left'><h3 className="ui left floated header">{this.linkBack()}</h3></Container>
+        <div class="ui clearing segment" className="whatdiv">
+        <Container textAlign='left'><h3 className="placename">{this.linkBack()}</h3></Container>
         <Container textAlign='right'><Button class="ui right floated button header" onClick={this.onDeleteClick}>Delete Place</Button></Container>
         <Container textAlign='center'><h1>{this.callPlace()}</h1></Container>
       </div>
@@ -87,7 +85,7 @@ class PlacesPage extends React.Component{
             <NewEntriesForm locationID = {this.state.locationID}/>
           </Grid.Column>
           <Grid.Column>
-            {this.passDataToMap()}
+            <div className="mappadding">{this.passDataToMap()}</div>
           </Grid.Column>
         </Grid.Row>
       </Grid>

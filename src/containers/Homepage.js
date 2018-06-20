@@ -33,7 +33,7 @@ callTripContainer = () => {
 
 passToMap = () => {
   if(this.props.trips){
-    console.log(this.props.trips.trips)
+    
     return(<AllPlacesMap trip={this.props.trips.trips}/>)
   }else{
     return (<h1>No Trips Yet</h1>)

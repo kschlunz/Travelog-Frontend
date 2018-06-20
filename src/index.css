@@ -76,8 +76,6 @@ body{
 
 .placename{
   font-family: 'Libre Baskerville', serif;
-
-
 }
 
 .marker{
@@ -92,4 +90,34 @@ body{
 .whatdiv{
   background-color: rgba(239, 225, 210, .75);
   background-size: cover;
+}
+
+.cardtext{
+  font-family: 'Libre Baskerville', serif;
+  font-weight: lighter;
+}
+
+.cardname{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 3rem;
+}
+
+.formpadding{
+  padding-top: 40px;
+}
+
+.formtext{
+  font-family: 'Libre Baskerville', serif;
+}
+
+.fpadding{
+  padding-top: 10px;
+}
+
+.mappadding{
+  padding-top: 100px;
+}
+
+.cardpad{
+  padding-right: 300px;
 }

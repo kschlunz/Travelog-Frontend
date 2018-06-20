@@ -17,7 +17,7 @@ class AllPlacesMap extends Component {
     center: {lat:0,lng:0}
   };
 
-
+  
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -27,14 +27,18 @@ class AllPlacesMap extends Component {
   }
 
   // onMarkerClick = (event) => {
-  //   console.log(event)
-  //   console.log(this.props.trip)
+  //   console.log(event.position)
+  //
   //   let tripA = this.props.trip.map((t)=>{return t.places})
   //   let myNew = [].concat(...tripA);
   //   let places= myNew.map((m)=>{
-  //     console.log(m)
+  //       let pos = {lat: m.lat, lng: m.lng }
+  //       console.log(pos.include(event.position))
   //
-  //     return(<Link to={`/places/${m.locationID}`}/>)
+  //     event.position
+  //       return(<Link to={`/places/${m.locationID}`}/>)
+  //
+  //
   //
   //   })
   //   return places
@@ -86,7 +90,7 @@ class AllPlacesMap extends Component {
           <Map
             {...this.props}
             center={this.state.center}
-            zoom = {2.75}
+            zoom = {2.50}
             containerStyle={{
               height: '75vh',
               position: 'relative',

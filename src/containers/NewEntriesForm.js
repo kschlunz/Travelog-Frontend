@@ -49,44 +49,44 @@ class NewEntriesForm extends React.Component {
 
   render () {
     return(
-      <div>
-        <h3>Add A New Entry</h3>
+      <div className="formpadding">
+        <h3 className="formtext">Add A New Entry</h3>
           <Form onSubmit={this.handleSubmit}>
 
-            <div>
-              <label>Description of Visit:</label>
+            <div className="fpadding">
+              <label className="formtext">Description of Visit:</label>
               <br />
-              <TextArea type="text" name="description" onChange={this.handleChange} value={this.state.description} />
+              <TextArea required type="text" name="description" onChange={this.handleChange} value={this.state.description} />
             </div>
               <br />
 
               <div>
-                <label>Restaurants:</label>
+                <label className="formtext">Restaurants:</label>
                 <br />
-                <TextArea type="text" name="restaurants" onChange={this.handleChange} value={this.state.restaurants} />
+                <TextArea  type="text" name="restaurants" onChange={this.handleChange} value={this.state.restaurants} />
               </div>
                 <br />
 
                 <div>
-                  <label>Accomodations:</label>
+                  <label className="formtext">Accomodations:</label>
                   <br />
                   <TextArea type="text" name="hotels" onChange={this.handleChange} value={this.state.hotels} />
                 </div>
                   <br />
 
                   <div>
-                    <label>Tours:</label>
+                    <label className="formtext">Tours:</label>
                     <br />
                     <TextArea type="text" name="tours" onChange={this.handleChange} value={this.state.tours} />
                   </div>
                     <br />
                   <div>
-                    <label>Photo Image URL:</label>
-                      
+                    <label  className="formtext">Photo Image URL:</label>
+
                       <input type="text" name="photos" onChange={this.handleChange} value={this.state.photos}/>
                   </div>
 
-
+                  <br></br>
             <Button type="submit">Submit</Button>
 
           </Form>

@@ -121,6 +121,7 @@ class Autofill extends Component {
         <div className='mapdiv'>
           <Form onSubmit={this.onSubmit}>
             <input
+              required
               placeholder="Enter a location"
               ref={ref => (this.autocomplete = ref)}
               type="text"
