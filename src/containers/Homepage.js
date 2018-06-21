@@ -33,7 +33,7 @@ callTripContainer = () => {
 
 passToMap = () => {
   if(this.props.trips){
-    
+
     return(<AllPlacesMap trip={this.props.trips.trips}/>)
   }else{
     return (<h1>No Trips Yet</h1>)
@@ -87,7 +87,6 @@ Homepage.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  state: state,
   trips: state.trips.trips,
   newTrip: state.trips.trip,
   loggedIn: state.session.loggedIn,
