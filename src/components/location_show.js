@@ -9,10 +9,7 @@ import GoogleMaps from './GoogleMaps'
 import Autofill from './Autofill'
 import { Container, Divider, Button, Grid, Image } from 'semantic-ui-react'
 
-
-
 class LocationShow extends React.Component{
-
  state= {id: ''}
 
   componentDidMount(){
@@ -58,7 +55,6 @@ class LocationShow extends React.Component{
       <div className="whatdiv">
         <p className="backlink"><Link textAlign='left' to='/homepage'>Back To All Trips</Link></p><br></br>
 
-
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
             <Grid.Column>
@@ -73,8 +69,6 @@ class LocationShow extends React.Component{
             <Button textAlign='left' onClick={this.onDeleteClick}>Delete Trip</Button>
         </div>
       </div>
-
-
 
     )
   }

@@ -132,5 +132,4 @@ export const deleteEntry = (id) => (dispatch) =>{
       payload: id
   })})
 
-
 }

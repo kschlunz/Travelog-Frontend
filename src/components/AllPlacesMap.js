@@ -17,7 +17,7 @@ class AllPlacesMap extends Component {
     center: {lat:0,lng:0}
   };
 
-  
+
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -25,24 +25,6 @@ class AllPlacesMap extends Component {
       showingInfoWindow: true
     });
   }
-
-  // onMarkerClick = (event) => {
-  //   console.log(event.position)
-  //
-  //   let tripA = this.props.trip.map((t)=>{return t.places})
-  //   let myNew = [].concat(...tripA);
-  //   let places= myNew.map((m)=>{
-  //       let pos = {lat: m.lat, lng: m.lng }
-  //       console.log(pos.include(event.position))
-  //
-  //     event.position
-  //       return(<Link to={`/places/${m.locationID}`}/>)
-  //
-  //
-  //
-  //   })
-  //   return places
-  // }
 
   onMapClick = (props) => {
     if (this.state.showingInfoWindow) {
@@ -52,9 +34,6 @@ class AllPlacesMap extends Component {
       });
     }
   }
-
-
-
 
   callTrip = () => {
 
@@ -73,15 +52,10 @@ class AllPlacesMap extends Component {
   }
 
   render() {
-    console.log(this.callTrip())
-
-
     return (
       <div className={styles.flexWrapper}>
         <div className={styles.left}>
-
         </div>
-
         <br/>
         <br/>
         <br/>
@@ -112,8 +86,6 @@ class AllPlacesMap extends Component {
     );
   }
 }
-
-
 
 export default connect(null, {createPlace})(GoogleApiWrapper({
     apiKey: ("AIzaSyC4WyhZwCUxnclM61INQrbBQt4MH2qFm0E")

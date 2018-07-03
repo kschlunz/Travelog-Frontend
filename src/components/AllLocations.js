@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { List } from 'semantic-ui-react'
 
 const AllLocations = (props) => {
-
-
     return (
       <List>
         <List.Item>
@@ -17,8 +15,6 @@ const AllLocations = (props) => {
       </List.Content>
       </List.Item>
       </List>
-
-
   )
 }
 

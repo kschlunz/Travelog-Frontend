@@ -46,10 +46,7 @@ class PlacesPage extends React.Component{
     }else {
       return(<h1>loading</h1>)
     }
-
-
   }
-
 
   callPlace = () => {
 
@@ -90,12 +87,6 @@ class PlacesPage extends React.Component{
         </Grid.Row>
       </Grid>
 
-
-
-
-
-
-
       </div>
     )
   }
@@ -105,8 +96,6 @@ function mapStateToProps({trips}, ownProps){
   return {
     trip: trips[ownProps.match.params.id],
     entry: trips.entry
-
-
   }
 }
 

@@ -8,9 +8,6 @@ import { Button, Card, Image } from 'semantic-ui-react'
 
 
 class PlacesList extends React.Component  {
-
-
-
   call = () => {
     if (this.props.place.trip.entries){
       return this.props.place.trip.entries.map((tripItem) =>{

@@ -3,9 +3,6 @@ import TripList from '../components/TripList'
 
 
 const TripContainer = (props) => {
-
-  
-
   return (
     <div>
       <ul>

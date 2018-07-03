@@ -12,35 +12,29 @@ class AllEntries extends React.Component {
     const id =  this.props.tripData.entryID;
     console.log(id)
     this.props.deleteEntry(id)
-
   }
 
+  render(){
 
+    return(
 
-render(){
+            <Card>
+              <Card.Content>
+                <Image floated='center' size='large' src={this.props.tripData.photos} />
+                  <Card.Description textAlign="left"><p className="cardtext">{this.props.tripData.description}</p></Card.Description>
+                  <br></br>
+                  <Card.Description textAlign="left"><p className="cardtext">hotels: {this.props.tripData.hotels}</p></Card.Description>
+                  <br></br>
+                  <Card.Description textAlign="left"><p className="cardtext">restaurants: {this.props.tripData.restaurants}</p></Card.Description>
+                  <br></br>
+                  <Card.Description textAlign="left"><p className="cardtext">tours: {this.props.tripData.tours}</p></Card.Description>
+                  <br></br>
+                <Button onClick={this.onDeleteClick}>Delete this entry</Button>
+              </Card.Content>
+            </Card>
 
-return (
-
-
-  <Card>
-    <Card.Content>
-      <Image floated='center' size='large' src={this.props.tripData.photos} />
-        <Card.Description textAlign="left"><p className="cardtext">{this.props.tripData.description}</p></Card.Description>
-        <br></br>
-        <Card.Description textAlign="left"><p className="cardtext">hotels: {this.props.tripData.hotels}</p></Card.Description>
-        <br></br>
-        <Card.Description textAlign="left"><p className="cardtext">restaurants: {this.props.tripData.restaurants}</p></Card.Description>
-        <br></br>
-        <Card.Description textAlign="left"><p className="cardtext">tours: {this.props.tripData.tours}</p></Card.Description>
-        <br></br>
-      <Button onClick={this.onDeleteClick}>Delete this entry</Button>
-    </Card.Content>
-  </Card>
-
-
-
-)
-}
+          )
+        }
 
 }
 

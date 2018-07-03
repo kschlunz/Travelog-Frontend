@@ -34,14 +34,10 @@ class Autofill extends Component {
   }
 
   renderAutoComplete() {
-     const { google} = this.props;
+    const { google} = this.props;
     const {map} = this.props.google.maps
-    // console.log(this.props.google.maps)
-    // if (!google || !map) return;
-    //
     const autocomplete = new google.maps.places.Autocomplete(this.autocomplete);
-    //
-    // autocomplete.bindTo('bounds', map);
+
      autocomplete.addListener('place_changed', () => {
        const place = autocomplete.getPlace();
        if (!place.geometry) return;
@@ -62,10 +58,7 @@ class Autofill extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
     this.props.createPlace(this.state.placeData)
-
-
   }
 
   onMarkerClick = (props, marker, e) => {
@@ -75,6 +68,7 @@ class Autofill extends Component {
       showingInfoWindow: true
     });
   }
+
   onMapClick = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -102,7 +96,6 @@ class Autofill extends Component {
   }
 
   callTrip = () => {
-
     if (this.props.trip.trip.places){
       return (this.props.trip.trip.places.map((place) => {
         return <Marker onClick = { this.onMarkerClick }
@@ -115,7 +108,6 @@ class Autofill extends Component {
 
   render() {
     const { position } = this.state;
-
     return (
       <div className='outmapdiv'>
         <div className='mapdiv'>
