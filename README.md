@@ -1,5 +1,5 @@
 ## Travelog
-A digital memory journal for travel enthusiasts. A place to quickly record trips, places you visted on that trip, mark them on a map and add as many entries as you want with photos for that place.
+A digital memory journal for travel enthusiasts. A place to quickly record trips, places you visited on that trip, mark them on a map and add as many entries as you want with photos for that place.
 
 I was inspired to build this project based on a problem I realized I have, which is I have traveled extensively but do not have a way of keeping an ongoing digital copy of the places and experiences I had. Rather than trying to carry around a journal which then ends up in a box somewhere I want a way to quickly record and share what I did in all of the places I visited.
 
