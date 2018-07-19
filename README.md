@@ -9,7 +9,7 @@ I was inspired to build this project based on a problem I realized I have, which
 https://youtu.be/PNzGll0-00Q
 
 ## Tech/framework used
-Ex. -React, Redux, Semantic UI, CSS, Google Maps API
+React, Redux, Semantic UI, CSS, Google Maps API
 
 
 ## Features
